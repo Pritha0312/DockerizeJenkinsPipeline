@@ -5,7 +5,7 @@ node {
     env.AWS_ECR_LOGIN=true
     def newApp
     def docker = "mydocker"
-    def registry = '00000012/dockerize_jenkins'
+    def registry = '00000012/dcokerpipe'
     def registryCredential = '00000012'
     def dockerImage = ''
 	
@@ -19,13 +19,13 @@ node {
 	stage('Test') {
 		sh 'npm test'
 	}
-	/*stage('Building image') {
-        docker.withRegistry( 'https://hub.docker.com/repository/docker/00000012/dockerize_jenkins') {
+	stage('Building image') {
+        docker.withRegistry( 'https://hub.docker.com/repository/docker/00000012/dcokerpipe',registryCredential) {
 		    def buildName = registry + ":$BUILD_NUMBER"
 			newApp = docker.build buildName
 			newApp.push()
         }
-	}*/
+	}
 	stage('Building image') {
       
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
