@@ -1,3 +1,5 @@
+def CONTAINER_NAME="jck1"
+    def CONTAINER_TAG="latest"
 node {
     
 	
@@ -8,8 +10,7 @@ node {
     def registry = '00000012'
     def registryCredential = '00000012'
     def dockerImage = ''
-    def CONTAINER_NAME="jck1"
-    def CONTAINER_TAG="latest"
+    
 	
 	stage('Git') {
 		git 'https://github.com/Pritha0312/DockerizeJenkinsPipeline.git'
@@ -32,10 +33,6 @@ node {
         imageBuild(CONTAINER_NAME, CONTAINER_TAG)
     }
 	
-	def imageBuild(containerName, tag){
-    sh "docker build -t $containerName:$tag  -t $containerName --pull --no-cache ."
-    echo "Image build complete"
-}
 	
 	stage('Build image') {
       
@@ -55,3 +52,8 @@ node {
     }*/
     
 }
+def imageBuild(containerName, tag){
+    sh "docker build -t $containerName:$tag  -t $containerName --pull --no-cache ."
+    echo "Image build complete"
+}
+	
