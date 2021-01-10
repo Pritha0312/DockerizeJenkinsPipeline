@@ -8,7 +8,7 @@ node {
     def registryCredential = 'dockerhub'
 	
 	stage('Git') {
-		git 'https://github.com/gustavoapolinario/microservices-node-example-todo-frontend.git'
+		git 'https://github.com/Pritha0312/DockerizeJenkinsPipeline.git'
 	}
 	stage('Build') {
 		sh 'npm install'
