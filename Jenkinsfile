@@ -4,6 +4,7 @@ node {
 
     env.AWS_ECR_LOGIN=true
     def newApp
+    def docker = "mydocker"
     def registry = '00000012 / dockerize_jenkins'
     def registryCredential = '00000012'
 	
