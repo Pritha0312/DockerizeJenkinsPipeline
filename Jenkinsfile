@@ -18,12 +18,19 @@ node {
 	stage('Test') {
 		sh 'npm test'
 	}
-	stage('Building image') {
+	/*stage('Building image') {
         docker.withRegistry( 'https://hub.docker.com/repository/docker/00000012/dockerize_jenkins') {
 		    def buildName = registry + ":$BUILD_NUMBER"
 			newApp = docker.build buildName
 			newApp.push()
+        }*/
+	stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
+      }
+    }
 	}
 	stage('Registring image') {
         docker.withRegistry( 'https://hub.docker.com/repository/docker/' + registry, registryCredential ) {
