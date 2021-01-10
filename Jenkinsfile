@@ -5,7 +5,7 @@ node {
     env.AWS_ECR_LOGIN=true
     def newApp
     def docker = "mydocker"
-    def registry = '00000012/dcokerpipe'
+    def registry = '00000012'
     def registryCredential = '00000012'
     def dockerImage = ''
 	
