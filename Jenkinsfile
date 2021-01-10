@@ -26,9 +26,9 @@ node {
 			newApp.push()
         }
 	}*/
-	stage('Building image') {
+	stage('Build image') {
       
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry
         
       
     }
