@@ -27,11 +27,10 @@ node {
         }
 	}*/
 	stage('Building image') {
-      steps{
-        script {
+      
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
-        }
-      }
+        
+      
     }
 	
 	stage('Registring image') {
