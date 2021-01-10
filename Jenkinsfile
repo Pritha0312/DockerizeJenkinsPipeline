@@ -53,7 +53,7 @@ node {
     
 }
 def imageBuild(containerName, tag){
-    sh "docker build -t $containerName:$tag"
+    sh "docker build -t $containerName:$tag ."
     echo "Image build complete"
 }
 	
