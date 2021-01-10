@@ -1,5 +1,9 @@
 def CONTAINER_NAME="jck1"
-    def CONTAINER_TAG="latest"
+def CONTAINER_TAG="latest"
+def USERNAME="00000012"
+def PASSWORD="Pritha@03"
+
+
 node {
     
 	
