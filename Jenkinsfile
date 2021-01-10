@@ -7,6 +7,7 @@ node {
     def docker = "mydocker"
     def registry = '00000012/dockerize_jenkins'
     def registryCredential = '00000012'
+    def dockerImage = ''
 	
 	stage('Git') {
 		git 'https://github.com/Pritha0312/DockerizeJenkinsPipeline.git'
