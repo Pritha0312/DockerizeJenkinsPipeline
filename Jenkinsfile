@@ -23,7 +23,8 @@ node {
 		    def buildName = registry + ":$BUILD_NUMBER"
 			newApp = docker.build buildName
 			newApp.push()
-        }*/
+        }
+	}*/
 	stage('Building image') {
       steps{
         script {
@@ -31,7 +32,7 @@ node {
         }
       }
     }
-	}
+	
 	stage('Registring image') {
         docker.withRegistry( 'https://hub.docker.com/repository/docker/' + registry, registryCredential ) {
     		newApp.push 'latest2'
