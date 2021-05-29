@@ -4,7 +4,7 @@ def USERNAME="00000012"
 def PASSWORD="Pritha@03"
 
 
-node {
+node 
     
 	
 
